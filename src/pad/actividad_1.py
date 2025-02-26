@@ -1,10 +1,12 @@
 import json
 import requests
+import sys
 
 
-class Ingestiones():
+class Actividad_1():
     def __init__(self):
         self.ruta_static="src/pad/static/"
+        sys.stdout.reconfigure(encoding='utf-8')
 
     def leer_api(self, url):
         response = requests.get(url)
@@ -14,7 +16,7 @@ class Ingestiones():
         pass
 
 # vamos crea una intancia de la clase
-ingestion = Ingestiones()
+ingestion = Actividad_1()
 #datos_json = ingestion.leer_api("https://api.github.com/users/octocat")
 #"https://api.nbp.pl/api/exchangerates/tables/{table}/"
 datos_json = ingestion.leer_api("https://api.nbp.pl/api/exchangerates/tables/B/")
